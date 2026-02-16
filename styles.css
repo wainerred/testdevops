@@ -254,14 +254,262 @@ footer {
 .footer-col ul li { margin-bottom: 10px; }
 .footer-col ul li a:hover { color: #3e77aa; }
 
+/* --- Service Detail Page --- */
+.service-detail {
+    padding: 60px 0;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 40px;
+    color: #3e77aa;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s;
+}
+.back-link:hover {
+    color: #4a8bc4;
+}
+
+.service-header {
+    margin-bottom: 50px;
+    border-bottom: 2px solid #3e77aa;
+    padding-bottom: 30px;
+}
+
+.service-header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.service-header h1 span {
+    color: #3e77aa;
+    font-family: monospace;
+}
+
+.service-price {
+    font-size: 20px;
+    color: #3e77aa;
+    font-weight: 600;
+}
+
+.service-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+}
+
+.content-col-main {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.service-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.service-section p {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.service-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.service-list li {
+    font-size: 14px;
+    color: #ccc;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.service-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #3e77aa;
+    font-weight: 700;
+}
+
+.benefits-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.benefits-list li {
+    font-size: 14px;
+    color: #ccc;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.benefits-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #3e77aa;
+    font-weight: 700;
+}
+
+.benefits-list strong {
+    color: #fff;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.tool-item {
+    background-color: #22252a;
+    padding: 15px 10px;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid #333;
+    font-size: 13px;
+    color: #3e77aa;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.tool-item:hover {
+    background-color: #2a2e33;
+    border-color: #3e77aa;
+}
+
+.sla-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.sla-item {
+    background-color: #22252a;
+    padding: 25px 20px;
+    border-radius: 4px;
+    border: 1px solid #333;
+}
+
+.sla-item h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #3e77aa;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sla-item p {
+    font-size: 13px;
+    color: #999;
+    line-height: 2;
+    margin: 0;
+}
+
+.content-col-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sidebar-box {
+    background-color: #22252a;
+    padding: 25px;
+    border-radius: 4px;
+    border: 1px solid #333;
+}
+
+.sidebar-box h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.sidebar-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.sidebar-list li {
+    font-size: 13px;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.sidebar-box p {
+    font-size: 13px;
+    color: #999;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.sidebar-box a {
+    color: #3e77aa;
+}
+
+.sidebar-box a:hover {
+    color: #4a8bc4;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+    background-color: #3e77aa;
+    color: #fff;
+    padding: 15px;
+    border-radius: 4px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background 0.3s;
+}
+
+.btn-block:hover {
+    background-color: #4a8bc4;
+}
+
 /* --- Responsive --- */
 @media (max-width: 1024px) {
     .grid { grid-template-columns: repeat(2, 1fr); }
     .principles-grid { grid-template-columns: repeat(2, 1fr); }
+    .service-content { grid-template-columns: 1fr; }
+    .tools-grid { grid-template-columns: repeat(3, 1fr); }
+    .sla-items { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
     .grid { grid-template-columns: 1fr; }
     .hero h1 { font-size: 32px; }
     .header-inner { flex-direction: column; gap: 20px; }
     .nav-menu { display: none; } /* Скрываем меню на моб для простоты */
+    .service-header h1 { font-size: 28px; }
+    .service-content { gap: 30px; }
+    .tools-grid { grid-template-columns: repeat(2, 1fr); }
+    .sla-items { grid-template-columns: 1fr; }
 }
