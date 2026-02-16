@@ -16,13 +16,4 @@ function initNavigation() {
             console.log('Клик на Обсудить проект');
         });
     }
-
-    // Обработчик ссылок "Подробнее"
-    const moreLinks = document.querySelectorAll('.more-link');
-    moreLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            console.log('Смотреть подробнее об услуге');
-        });
-    });
 }
