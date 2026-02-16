@@ -1,0 +1,267 @@
+/* --- Reset & Base --- */
+* { box-sizing: border-box; margin: 0; padding: 0; outline: none; }
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #1b1d20; /* Оригинальный темный фон */
+    color: #ffffff;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; }
+
+.container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Header --- */
+header {
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    background: rgba(27, 29, 32, 0.95);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+/* Имитация логотипа (синий квадрат) */
+.logo::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: #3e77aa;
+    border-radius: 4px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.nav-menu a { color: #aaa; }
+.nav-menu a:hover { color: #fff; }
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.contacts {
+    text-align: right;
+    font-size: 14px;
+    line-height: 1.4;
+}
+.contacts .phone { font-weight: 700; display: block; }
+.contacts .email { color: #3e77aa; font-size: 13px; }
+
+.btn-discuss {
+    background-color: #3e77aa;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background 0.3s;
+}
+.btn-discuss:hover { background-color: #4a8bc4; }
+
+/* --- Hero Section --- */
+.hero {
+    padding: 100px 0 60px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    max-width: 900px;
+    margin: 0 auto 40px;
+}
+.hero h1 span { color: #3e77aa; }
+
+/* --- Services Grid --- */
+.services { padding: 40px 0 100px; }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Карточка услуги (точная копия) */
+.card {
+    background-color: #22252a; /* Чуть светлее фона */
+    padding: 35px 30px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 320px;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border-color: #333;
+}
+
+.card-num {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 14px;
+    color: #444;
+    font-weight: 700;
+}
+
+.card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+/* Элемент >_ в заголовке */
+.card-title span {
+    color: #3e77aa;
+    font-family: monospace;
+    font-weight: 400;
+}
+
+.card-desc {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
+
+.card-footer {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+.price span { color: #777; font-weight: 400; font-size: 12px; display: block; margin-bottom: 2px;}
+
+.more-link {
+    font-size: 13px;
+    color: #3e77aa;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.more-link::after {
+    content: "→";
+    font-size: 16px;
+    transition: transform 0.2s;
+}
+.more-link:hover::after { transform: translateX(3px); }
+
+/* --- Principles Section --- */
+.principles {
+    background-color: #22252a;
+    padding: 80px 0;
+}
+.section-header {
+    margin-bottom: 50px;
+}
+.section-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+.p-item h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+.p-item p {
+    font-size: 13px;
+    color: #aaa;
+    line-height: 1.6;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #16181b;
+    padding: 60px 0;
+    font-size: 13px;
+    color: #666;
+}
+.footer-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+.footer-col h4 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li a:hover { color: #3e77aa; }
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+    .principles-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+    .grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 32px; }
+    .header-inner { flex-direction: column; gap: 20px; }
+    .nav-menu { display: none; } /* Скрываем меню на моб для простоты */
+}
