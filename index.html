@@ -3,94 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RootLab — DevOps & Infrastructure Management</title>
+    <title>Nixys - DevOps, DevSecOps, MLOps, Техподдержка IT-проектов 24/7</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg: #0a0a0a;
-            --card-bg: #141414;
-            --primary: #3b82f6;
-            --accent: #10b981;
-            --text-main: #e5e7eb;
-            --text-dim: #9ca3af;
-            --border: #262626;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        /* --- Reset & Base --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; outline: none; }
+        
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            background-color: var(--bg);
-            color: var(--text-main);
-            line-height: 1.6;
-            scroll-behavior: smooth;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #1b1d20; /* Оригинальный темный фон */
+            color: #ffffff;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
         a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
         /* --- Header --- */
-        header { 
-            padding: 20px 0; 
-            border-bottom: 1px solid var(--border); 
-            position: sticky; top: 0; 
-            background: rgba(10, 10, 10, 0.8); 
-            backdrop-filter: blur(10px); 
-            z-index: 1000; 
+        header {
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            background: rgba(27, 29, 32, 0.95);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
-        .header-inner { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 22px; font-weight: 800; font-family: 'Courier New', monospace; letter-spacing: -1px; }
-        .logo span { color: var(--primary); }
-        .nav-links { display: flex; gap: 30px; }
-        .nav-links a:hover { color: var(--primary); }
-        .phone { font-weight: 600; color: var(--primary); }
 
-        /* --- Hero --- */
-        .hero { padding: 120px 0 80px; background: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%); }
-        .hero h1 { font-size: 64px; font-weight: 800; line-height: 1.1; margin-bottom: 24px; }
-        .hero h1 span { color: var(--primary); }
-        .hero p { font-size: 20px; color: var(--text-dim); max-width: 650px; margin-bottom: 40px; }
-        .cta-group { display: flex; gap: 20px; }
-        .btn { padding: 16px 32px; border-radius: 6px; font-weight: 700; cursor: pointer; transition: 0.3s; border: none; }
-        .btn-primary { background: var(--primary); color: white; }
-        .btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
-        .btn-outline { background: transparent; border: 1px solid var(--border); color: white; }
-        .btn-outline:hover { background: var(--border); }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-        /* --- Services --- */
-        .section-header { margin-bottom: 50px; }
-        .tag { color: var(--primary); font-family: monospace; font-size: 14px; text-transform: uppercase; margin-bottom: 10px; display: block; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        /* Имитация логотипа (синий квадрат) */
+        .logo::before {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 30px;
+            background: #3e77aa;
+            border-radius: 4px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .nav-menu a { color: #aaa; }
+        .nav-menu a:hover { color: #fff; }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .contacts {
+            text-align: right;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        .contacts .phone { font-weight: 700; display: block; }
+        .contacts .email { color: #3e77aa; font-size: 13px; }
+
+        .btn-discuss {
+            background-color: #3e77aa;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background 0.3s;
+        }
+        .btn-discuss:hover { background-color: #4a8bc4; }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1.2;
+            max-width: 900px;
+            margin: 0 auto 40px;
+        }
+        .hero h1 span { color: #3e77aa; }
+
+        /* --- Services Grid --- */
+        .services { padding: 40px 0 100px; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        /* Карточка услуги (точная копия) */
+        .card {
+            background-color: #22252a; /* Чуть светлее фона */
+            padding: 35px 30px;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 320px;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border-color: #333;
+        }
+
+        .card-num {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 14px;
+            color: #444;
+            font-weight: 700;
+        }
+
+        .card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        /* Элемент >_ в заголовке */
+        .card-title span {
+            color: #3e77aa;
+            font-family: monospace;
+            font-weight: 400;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            flex-grow: 1;
+        }
+
+        .card-footer {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+        }
+        .price span { color: #777; font-weight: 400; font-size: 12px; display: block; margin-bottom: 2px;}
+
+        .more-link {
+            font-size: 13px;
+            color: #3e77aa;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .more-link::after {
+            content: "→";
+            font-size: 16px;
+            transition: transform 0.2s;
+        }
+        .more-link:hover::after { transform: translateX(3px); }
+
+        /* --- Principles Section --- */
+        .principles {
+            background-color: #22252a;
+            padding: 80px 0;
+        }
+        .section-header {
+            margin-bottom: 50px;
+        }
+        .section-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+        }
         
-        .card { 
-            background: var(--card-bg); 
-            padding: 40px; 
-            border-radius: 12px; 
-            border: 1px solid var(--border); 
-            position: relative; 
-            overflow: hidden; 
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
         }
-        .card:hover { border-color: var(--primary); }
-        .card::before { content: ">_"; position: absolute; top: 20px; right: 20px; font-family: monospace; color: var(--border); font-size: 24px; }
-        .card h3 { font-size: 24px; margin-bottom: 16px; color: var(--accent); }
-        .card ul { list-style: none; color: var(--text-dim); font-size: 14px; }
-        .card ul li { margin-bottom: 8px; display: flex; align-items: center; }
-        .card ul li::before { content: "•"; color: var(--primary); margin-right: 8px; }
-
-        /* --- Steps / Process --- */
-        .process { padding: 100px 0; background: #0d0d0d; }
-        .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 40px; }
-        .step { position: relative; }
-        .step-num { font-size: 40px; font-weight: 800; color: rgba(59, 130, 246, 0.2); margin-bottom: 10px; }
-        .step h4 { margin-bottom: 10px; }
+        .p-item h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .p-item p {
+            font-size: 13px;
+            color: #aaa;
+            line-height: 1.6;
+        }
 
         /* --- Footer --- */
-        footer { padding: 80px 0 40px; border-top: 1px solid var(--border); }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 60px; }
-        .footer-bottom { text-align: center; color: var(--text-dim); font-size: 13px; border-top: 1px solid var(--border); padding-top: 30px; }
+        footer {
+            background-color: #16181b;
+            padding: 60px 0;
+            font-size: 13px;
+            color: #666;
+        }
+        .footer-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col ul li a:hover { color: #3e77aa; }
 
+        /* --- Responsive --- */
+        @media (max-width: 1024px) {
+            .grid { grid-template-columns: repeat(2, 1fr); }
+            .principles-grid { grid-template-columns: repeat(2, 1fr); }
+        }
         @media (max-width: 768px) {
-            .hero h1 { font-size: 40px; }
-            .steps { grid-template-columns: 1fr; }
-            .nav-links { display: none; }
+            .grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 32px; }
+            .header-inner { flex-direction: column; gap: 20px; }
+            .nav-menu { display: none; } /* Скрываем меню на моб для простоты */
         }
     </style>
 </head>
@@ -98,141 +279,176 @@
 
     <header>
         <div class="container header-inner">
-            <div class="logo"><span>>_</span> RootLab</div>
-            <nav class="nav-links">
-                <a href="#services">Услуги</a>
-                <a href="#process">Процесс</a>
-                <a href="#cases">Кейсы</a>
-                <a href="#">Контакты</a>
+            <div class="logo">NIXYS</div>
+            
+            <nav class="nav-menu">
+                <a href="#">Услуги</a>
+                <a href="#">Принципы</a>
+                <a href="#">Клиенты</a>
+                <a href="#">Журнал</a>
             </nav>
-            <a href="tel:+79521391771" class="phone">+7 (952) 139-17-71</a>
+
+            <div class="header-right">
+                <div class="contacts">
+                    <span class="phone">+7 (499) 704 70 70</span>
+                    <a href="mailto:hello@nixys.ru" class="email">hello@nixys.ru</a>
+                </div>
+                <a href="#" class="btn-discuss">Обсудить проект</a>
+            </div>
         </div>
     </header>
 
     <section class="hero">
         <div class="container">
-            <span class="tag">// Infrastructure as Code</span>
-            <h1>Наводим порядок в <span>инфраструктуре</span></h1>
-            <p>RootLab помогает IT-командам забыть о «падениях» серверов и медленном деплое. Строим DevOps-процессы, которые экономят бюджет и нервы.</p>
-            <div class="cta-group">
-                <button class="btn btn-primary">Нужен аудит проекта</button>
-                <button class="btn btn-outline">Посмотреть кейсы</button>
-            </div>
+            <h1>DevOps, DevSecOps, MLOps и техподдержка серверов 24/7 <span>для highload-проектов</span></h1>
         </div>
     </section>
 
-    <section class="container" id="services" style="padding: 80px 0;">
-        <div class="section-header">
-            <span class="tag">// Наши компетенции</span>
-            <h2>Что мы делаем лучше всего</h2>
-        </div>
-        <div class="grid">
+    <section class="services">
+        <div class="container grid">
+            
             <div class="card">
-                <h3>Kubernetes</h3>
-                <p style="margin-bottom: 20px;">Проектирование и запуск кластеров (on-premise или облака).</p>
-                <ul>
-                    <li>Миграция без простоя (Zero Downtime)</li>
-                    <li>Настройка Helm, ArgoCD, Istio</li>
-                    <li>Автомасштабирование под нагрузки</li>
-                </ul>
+                <span class="card-num">01</span>
+                <div class="card-title"><span>>_</span> DevOps & CI/CD</div>
+                <div class="card-desc">
+                    Помогаем компаниям внедрять передовые DevOps-практики и автоматизацию процессов CI/CD для ускорения разработки и повышения отказоустойчивости сервисов в production.
+                </div>
+                <div class="card-footer">
+                    <div class="price">
+                        <span>Стоимость:</span>
+                        от 240 000 ₽
+                    </div>
+                    <a href="#" class="more-link">Подробнее</a>
+                </div>
             </div>
+
             <div class="card">
-                <h3>Поддержка 24/7</h3>
-                <p style="margin-bottom: 20px;">Ваш проект под наблюдением, пока вы отдыхаете.</p>
-                <ul>
-                    <li>Реакция на инциденты до 15 минут</li>
-                    <li>Мониторинг Prometheus / Grafana</li>
-                    <li>SLA прописан в договоре</li>
-                </ul>
+                <span class="card-num">02</span>
+                <div class="card-title"><span>>_</span> DevSecOps</div>
+                <div class="card-desc">
+                    Безопасность стоит дорого. Нет, нет, не само ее внедрение, а убытки от нее. Вы уже подумали об этом? Внедрим защиту на всех этапах пайплайна.
+                </div>
+                <div class="card-footer">
+                    <div class="price">
+                        <span>Стоимость:</span>
+                        от 540 000 ₽
+                    </div>
+                    <a href="#" class="more-link">Подробнее</a>
+                </div>
             </div>
+
             <div class="card">
-                <h3>CI/CD</h3>
-                <p style="margin-bottom: 20px;">Автоматизация релизного цикла от коммита до продакшена.</p>
-                <ul>
-                    <li>GitLab CI, GitHub Actions, Jenkins</li>
-                    <li>Сканирование кода на уязвимости</li>
-                    <li>Ускорение сборки в 3-5 раз</li>
-                </ul>
+                <span class="card-num">03</span>
+                <div class="card-title"><span>>_</span> MLOps</div>
+                <div class="card-desc">
+                    Строим эффективные процессы, уже и для ML. Зайдем на проект, посмотрим и сделаем лучше! Обучение, деплой и мониторинг моделей.
+                </div>
+                <div class="card-footer">
+                    <div class="price">
+                        <span>Стоимость:</span>
+                        от 540 000 ₽
+                    </div>
+                    <a href="#" class="more-link">Подробнее</a>
+                </div>
             </div>
+
+            <div class="card">
+                <span class="card-num">04</span>
+                <div class="card-title"><span>>_</span> Импортозамещение</div>
+                <div class="card-desc">
+                    Обеспечим конкурентное преимущество вашего IT-продукта сейчас. Поможем быть на шаг впереди, когда иностранный вендор прекратит поддержку.
+                </div>
+                <div class="card-footer">
+                    <div class="price">
+                        <span>Стоимость:</span>
+                        от 360 000 ₽
+                    </div>
+                    <a href="#" class="more-link">Подробнее</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="card-num">05</span>
+                <div class="card-title"><span>>_</span> Поддержка 24/7</div>
+                <div class="card-desc">
+                    Круглосуточно поддерживаем более 1000 серверов. Хотите быть онлайн 24/7 и спать спокойно? Это к нам. Реакция на инциденты — 15 минут.
+                </div>
+                <div class="card-footer">
+                    <div class="price">
+                        <span>Стоимость:</span>
+                        от 50 000 ₽
+                    </div>
+                    <a href="#" class="more-link">Подробнее</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="card-num">06</span>
+                <div class="card-title"><span>>_</span> Kubernetes</div>
+                <div class="card-desc">
+                    Проектируем и внедряем отказоустойчивые инфраструктуры на базе K8s. Обеспечиваем высокую доступность сервисов в production.
+                </div>
+                <div class="card-footer">
+                    <div class="price">
+                        <span>Стоимость:</span>
+                        от 320 000 ₽
+                    </div>
+                    <a href="#" class="more-link">Подробнее</a>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <section class="process" id="process">
+    <section class="principles">
         <div class="container">
             <div class="section-header">
-                <span class="tag">// Workflow</span>
-                <h2>4 шага к стабильному проекту</h2>
+                <h2>Настоящий 24/7: эти ребята вообще когда-нибудь спят?</h2>
             </div>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-num">01</div>
-                    <h4>Аудит</h4>
-                    <p class="text-dim">Изучаем ваш стек, ищем узкие места в безопасности и производительности.</p>
+            <div class="principles-grid">
+                <div class="p-item">
+                    <h3>Проактивность</h3>
+                    <p>Находим и устраняем многие проблемы до их проявления. Если видим полезный тюнинг, предлагаем и внедряем.</p>
                 </div>
-                <div class="step">
-                    <div class="step-num">02</div>
-                    <h4>Стратегия</h4>
-                    <p class="text-dim">Разрабатываем Roadmap перехода на IaC и современные инструменты.</p>
+                <div class="p-item">
+                    <h3>SLA с гарантией</h3>
+                    <p>Скорость реакции и время простоя фиксируем в договоре. Несем за них финансовую ответственность.</p>
                 </div>
-                <div class="step">
-                    <div class="step-num">03</div>
-                    <h4>Внедрение</h4>
-                    <p class="text-dim">Настраиваем окружение, обучаем вашу команду работать с новыми процессами.</p>
+                <div class="p-item">
+                    <h3>Правило 15 минут</h3>
+                    <p>Если случается беда, у наших администраторов есть 15 минут, чтобы приступить к её решению.</p>
                 </div>
-                <div class="step">
-                    <div class="step-num">04</div>
-                    <h4>Support</h4>
-                    <p class="text-dim">Берем проект на круглосуточное сопровождение и развитие.</p>
+                <div class="p-item">
+                    <h3>Дотошность</h3>
+                    <p>Задаём много вопросов, уточняем детали. Ваш проект получает лучшее решение, учитывающее все тонкости.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="container" id="cases" style="padding: 100px 0;">
-        <div class="section-header">
-            <span class="tag">// Cases</span>
-            <h2>Реальные задачи, которые мы решили</h2>
-        </div>
-        <div class="grid">
-            <div style="border-left: 2px solid var(--primary); padding-left: 20px;">
-                <h4 style="color: var(--primary);">Highload E-commerce</h4>
-                <p>Подготовили проект к Черной Пятнице. Выдержали нагрузку в 50 000 RPS без единой ошибки.</p>
-            </div>
-            <div style="border-left: 2px solid var(--primary); padding-left: 20px;">
-                <h4 style="color: var(--primary);">Fintech Startup</h4>
-                <p>Внедрение DevSecOps и прохождение аудита безопасности для получения лицензии.</p>
-            </div>
-            <div style="border-left: 2px solid var(--primary); padding-left: 20px;">
-                <h4 style="color: var(--primary);">Медиа-холдинг</h4>
-                <p>Миграция с зарубежного AWS на Yandex Cloud за 2 недели без остановки вещания.</p>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <div class="logo" style="margin-bottom: 20px;"><span>>_</span> RootLab</div>
-                    <p class="text-dim">Профессиональный DevOps-аутсорсинг и техническая поддержка высоконагруженных систем.</p>
+            <div class="footer-row">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 15px;">NIXYS</div>
+                    <p>© 2011—2026. Все права защищены.</p>
                 </div>
-                <div>
-                    <h5 style="margin-bottom: 20px;">Услуги</h5>
-                    <ul class="text-dim" style="list-style: none; font-size: 14px;">
-                        <li>Kubernetes</li>
-                        <li>Аудит безопасности</li>
-                        <li>Облачная миграция</li>
+                <div class="footer-col">
+                    <h4>Услуги</h4>
+                    <ul>
+                        <li><a href="#">DevOps аутсорсинг</a></li>
+                        <li><a href="#">Kubernetes</a></li>
+                        <li><a href="#">CI/CD</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h5 style="margin-bottom: 20px;">Контакты</h5>
-                    <p class="text-dim" style="font-size: 14px;">+7 (952) 139-17-71</p>
-                    <p class="text-dim" style="font-size: 14px;">hello@mydevops.ru</p>
-                    <p class="text-dim" style="font-size: 14px;">г. ЕКБ, ул. Примерная, 10</p>
+                <div class="footer-col">
+                    <h4>Контакты</h4>
+                    <ul>
+                        <li>+7 (499) 704 70 70</li>
+                        <li>hello@nixys.ru</li>
+                        <li>г. ЕКБ</li>
+                    </ul>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                &copy; 2026 RootLab Company. Мы делаем IT стабильным.
             </div>
         </div>
     </footer>
