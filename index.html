@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Solutions - Аналог Nixys</title>
+    <style>
+        /* --- Базовые стили и сброс --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212; /* Темный фон как у оригинала */
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- Типографика и цвета --- */
+        :root {
+            --primary-color: #3b82f6; /* Акцентный синий */
+            --bg-card: #1e1e1e;       /* Фон карточек */
+            --text-gray: #a0a0a0;     /* Серый текст */
+            --accent-green: #10b981;  /* Зеленый (как в терминале) */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Хедер --- */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid #333;
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Courier New', monospace; /* Консольный стиль */
+        }
+        .logo span { color: var(--primary-color); }
+        
+        .nav-links a {
+            margin-left: 20px;
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+        .nav-links a:hover { color: #fff; }
+        
+        .contact-btn {
+            border: 1px solid #fff;
+            padding: 8px 16px;
+            border-radius: 4px;
+        }
+
+        /* --- Hero Секция (Главный экран) --- */
+        .hero {
+            padding: 80px 0;
+            text-align: left;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            max-width: 800px;
+        }
+        .hero p {
+            font-size: 18px;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+        .hero-btn {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 15px 30px;
+            font-weight: bold;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        /* --- Секция услуг (Сетка) --- */
+        .services {
+            padding: 60px 0;
+        }
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 40px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            padding: 30px;
+            border-radius: 8px;
+            transition: transform 0.2s, background-color 0.2s;
+            border: 1px solid #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background-color: #252525;
+            border-color: var(--primary-color);
+        }
+
+        .card-header {
+            font-family: 'Courier New', monospace;
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--accent-green);
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .card-price {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #333;
+        }
+
+        /* --- Стек технологий --- */
+        .stack {
+            padding: 60px 0;
+            background-color: #0f0f0f;
+        }
+        .stack-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .tech-tag {
+            background: #333;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        /* --- Футер --- */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid #333;
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+
+        /* --- Адаптивность --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .header-inner { flex-direction: column; gap: 15px; }
+            .nav-links { margin-bottom: 15px; }
+            .services-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                <span>>_</span> MyDevOps
+            </div>
+            <nav class="nav-links">
+                <a href="#">Услуги</a>
+                <a href="#">Кейсы</a>
+                <a href="#">Компания</a>
+                <a href="#">Блог</a>
+            </nav>
+            <a href="#" class="contact-btn">+7 (999) 000-00-00</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>DevOps, Kubernetes и поддержка серверов 24/7</h1>
+            <p>Обеспечиваем отказоустойчивость highload-проектов. Внедряем CI/CD, мигрируем в облака и спасаем, когда всё упало.</p>
+            <a href="#" class="hero-btn">Обсудить проект</a>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Наши услуги</h2>
+            <div class="services-grid">
+                
+                <div class="card">
+                    <div class="card-header">>_ DevOps & CI/CD</div>
+                    <div class="card-desc">
+                        Ускоряем разработку (Time-to-Market) за счет автоматизации процессов. Настраиваем пайплайны, Docker, Kubernetes.
+                    </div>
+                    <div class="card-price">От 200 000 ₽</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">>_ Поддержка 24/7</div>
+                    <div class="card-desc">
+                        Круглосуточный мониторинг ваших серверов. Реагируем на инциденты за 15 минут. Вы спите — мы работаем.
+                    </div>
+                    <div class="card-price">От 50 000 ₽</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">>_ DevSecOps</div>
+                    <div class="card-desc">
+                        Внедряем безопасность на всех этапах разработки. Аудит инфраструктуры и защита от DDoS.
+                    </div>
+                    <div class="card-price">От 300 000 ₽</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">>_ Импортозамещение</div>
+                    <div class="card-desc">
+                        Миграция с AWS/Azure на Yandex Cloud или Selectel. Замена зарубежного ПО на отечественные аналоги.
+                    </div>
+                    <div class="card-price">Индивидуально</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">>_ MLOps</div>
+                    <div class="card-desc">
+                        Выстраиваем процессы для Machine Learning. Обучение, деплой и мониторинг моделей.
+                    </div>
+                    <div class="card-price">От 400 000 ₽</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">>_ Аудит инфраструктуры</div>
+                    <div class="card-desc">
+                        Найдем узкие места в производительности и дыры в безопасности. Дадим подробный отчет.
+                    </div>
+                    <div class="card-price">От 90 000 ₽</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="stack">
+        <div class="container">
+            <h2 class="section-title">Стек технологий</h2>
+            <div class="stack-list">
+                <div class="tech-tag">Kubernetes</div>
+                <div class="tech-tag">Docker</div>
+                <div class="tech-tag">GitLab CI</div>
+                <div class="tech-tag">Python</div>
+                <div class="tech-tag">Go</div>
+                <div class="tech-tag">Ansible</div>
+                <div class="tech-tag">Terraform</div>
+                <div class="tech-tag">Prometheus</div>
+                <div class="tech-tag">Grafana</div>
+                <div class="tech-tag">PostgreSQL</div>
+                <div class="tech-tag">ClickHouse</div>
+                <div class="tech-tag">Yandex Cloud</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 MyDevOps Company. Все права защищены.</p>
+            <p>hello@mydevops.ru | г. Москва, ул. Примерная, 10</p>
+        </div>
+    </footer>
+
+</body>
+</html>
