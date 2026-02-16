@@ -93,7 +93,75 @@ header {
 }
 .btn-discuss:hover { background-color: #4a8bc4; }
 
-/* --- Hero Section --- */
+/* --- Burger Menu --- */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    gap: 5px;
+    z-index: 1001;
+}
+
+.burger-menu span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.burger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.burger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(27, 29, 32, 0.98);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding: 20px;
+    z-index: 999;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mobile-menu a {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
+}
+
+.mobile-menu a:last-child { border-bottom: none; }
+
+.mobile-menu a:hover {
+    color: #3e77aa;
+    padding-left: 10px;
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+
 .hero {
     padding: 100px 0 60px;
     text-align: center;
@@ -511,19 +579,20 @@ footer {
     /* Header */
     header { padding: 16px 0; }
     .header-inner { 
-        flex-direction: column; 
+        flex-direction: row;
         gap: 16px;
-        align-items: flex-start;
+        align-items: center;
+        justify-content: space-between;
     }
     .logo { 
         font-size: 20px;
     }
     .nav-menu { display: none; }
+    .burger-menu {
+        display: flex;
+    }
     .header-right { 
-        width: 100%;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 12px;
+        display: none;
     }
     .contacts {
         text-align: left;
