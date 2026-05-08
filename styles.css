@@ -127,14 +127,12 @@ header {
     flex-shrink: 0;
 }
 
-.logo::before {
-    content: "";
-    display: block;
-    width: 30px;
-    height: 30px;
-    background: linear-gradient(135deg, var(--accent-hover), var(--accent));
-    border-radius: 4px;
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12);
+.logo-mark {
+    color: var(--accent-hover);
+    font-family: monospace;
+    font-weight: 700;
+    letter-spacing: 0;
+    font-size: 0.95em;
 }
 
 .nav-menu {
@@ -934,11 +932,6 @@ footer {
 
     .header-inner { gap: 12px; }
     .logo { font-size: 18px; }
-
-    .logo::before {
-        width: 24px;
-        height: 24px;
-    }
 
     .hero { padding: 40px 0 30px; }
 
