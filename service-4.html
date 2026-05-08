@@ -4,147 +4,168 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Импортозамещение - RootLab</title>
+    <meta name="description" content="Помогаем мигрировать инфраструктуру и стек с иностранных решений на устойчивые альтернативы: без потери контроля, безопасности и поддержки.">
+    <meta name="theme-color" content="#1b1d20">
+    <meta property="og:title" content="Импортозамещение - RootLab">
+    <meta property="og:description" content="Планируем и проводим технологическую миграцию: инфраструктура, базы данных, сервисы и процессы эксплуатации.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="logo.png">
+    <link rel="canonical" href="https://root-lab.ru/service-4.html">
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <a class="skip-link" href="#mainContent">Перейти к содержимому</a>
 
     <header>
         <div class="container header-inner">
-            <div class="logo">RootLab</div>
-            
-            <nav class="nav-menu">
-                <a href="index.html">Главная</a>
-                <a href="#">Услуги</a>
-                <a href="#">Принципы</a>
-                <a href="#">Клиенты</a>
+            <a href="index.html" class="logo" aria-label="RootLab — главная">RootLab</a>
+
+            <nav class="nav-menu" aria-label="Основная навигация">
+                <a href="index.html#services">Услуги</a>
+                <a href="index.html#principles">Принципы</a>
+                <a href="index.html#clients">Клиенты</a>
+                <a href="index.html#training">Обучение</a>
+                <a href="index.html#contact">Контакты</a>
             </nav>
 
             <div class="header-right">
                 <div class="contacts">
-                    <span class="phone">+7 (499) 704 70 70</span>
-                    <a href="mailto:hello@RootLab.ru" class="email">hello@RootLab.ru</a>
+                    <a href="tel:+74997047070" class="phone">+7 (499) 704 70 70</a>
+                    <a href="mailto:hello@root-lab.ru" class="email">hello@root-lab.ru</a>
                 </div>
-                <a href="#" class="btn-discuss">Обсудить проект</a>
+                <a href="index.html#contact" class="btn-discuss">Обсудить проект</a>
             </div>
 
-            <button class="burger-menu" id="burgerBtn">
+            <button
+                class="burger-menu"
+                id="burgerBtn"
+                type="button"
+                aria-expanded="false"
+                aria-controls="mobileMenu"
+                aria-label="Открыть меню"
+            >
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
         </div>
 
-        <nav class="mobile-menu" id="mobileMenu">
-            <a href="index.html">Главная</a>
-            <a href="#">Услуги</a>
-            <a href="#">Принципы</a>
-            <a href="#">Клиенты</a>
-            <a href="#">Обучение</a>
-            <a href="mailto:hello@RootLab.ru">hello@RootLab.ru</a>
+        <nav class="mobile-menu" id="mobileMenu" aria-label="Мобильная навигация">
+            <a href="index.html#services">Услуги</a>
+            <a href="index.html#principles">Принципы</a>
+            <a href="index.html#clients">Клиенты</a>
+            <a href="index.html#training">Обучение</a>
+            <a href="index.html#contact">Контакты</a>
+            <a href="mailto:hello@root-lab.ru">hello@root-lab.ru</a>
             <a href="tel:+74997047070">+7 (499) 704 70 70</a>
         </nav>
     </header>
 
-    <section class="service-detail">
-        <div class="container">
-            <a href="index.html" class="back-link">← Вернуться на главную</a>
-            
-            <div class="service-header">
-                <h1><span>>_</span> Импортозамещение</h1>
-                <!--<div class="service-price">от 360 000 ₽</div>-->
-            </div>
+    <main id="mainContent">
+        <section class="service-detail">
+            <div class="container">
+                <a href="index.html" class="back-link">← Вернуться на главную</a>
 
-            <div class="service-content">
-                <div class="content-col-main">
-                    <section class="service-section">
-                        <h2>Технологическая независимость</h2>
-                        <p>В условиях быстро меняющегося геополитического ландшафта импортозамещение становится критической стратегией. Мы помогаем обеспечить конкурентное преимущество вашего IT-продукта сейчас, оставаясь впереди на случай, когда иностранный вендор прекратит поддержку или услуги.</p>
-                    </section>
+                <div class="service-header">
+                    <h1><span>>_</span> Импортозамещение</h1>
+                </div>
 
-                    <section class="service-section">
-                        <h2>Наши решения</h2>
-                        <ul class="service-list">
-                            <li>Миграция с иностранных облачных сервисов на отечественные</li>
-                            <li>Замена иностранных СУБД на российские аналоги</li>
-                            <li>Переход на открытые и свободные решения</li>
-                            <li>Разработка собственных решений вместо иностранных аналогов</li>
-                            <li>Адаптация и оптимизация ПО под российскую IT-инфраструктуру</li>
-                            <li>Внедрение российских систем аналитики и мониторинга</li>
-                            <li>Переподготовка команды на работу с отечественными технологиями</li>
-                        </ul>
-                    </section>
+                <div class="service-content">
+                    <div class="content-col-main">
+                        <section class="service-section">
+                            <h2>Технологическая независимость</h2>
+                            <p>Когда платформа зависит от внешнего вендора, любые ограничения быстро становятся бизнес-риском. Мы помогаем спланировать и провести миграцию на устойчивые решения, сохранив управляемость, безопасность и доступность сервисов.</p>
+                        </section>
 
-                    <section class="service-section">
-                        <h2>Отечественные технологии</h2>
-                        <div class="tools-grid">
-                            <div class="tool-item">Astra Linux</div>
-                            <div class="tool-item">1C</div>
-                            <div class="tool-item">PostgreSQL</div>
-                            <div class="tool-item">Tarantool</div>
-                            <div class="tool-item">Clickhouse</div>
-                            <div class="tool-item">YandexCloud</div>
-                            <div class="tool-item">Openshift</div>
-                            <div class="tool-item">Nextcloud</div>
+                        <section class="service-section">
+                            <h2>Наши решения</h2>
+                            <ul class="service-list">
+                                <li>Миграция с иностранных облачных сервисов на локальные или private cloud-решения</li>
+                                <li>Замена критичных компонентов стека на поддерживаемые альтернативы</li>
+                                <li>Переход на open source и self-hosted-инструменты</li>
+                                <li>Адаптация архитектуры и процессов эксплуатации под новый стек</li>
+                                <li>Планирование cutover и минимизация downtime</li>
+                                <li>Обучение команды работе с новой инфраструктурой</li>
+                            </ul>
+                        </section>
+
+                        <section class="service-section">
+                            <h2>Технологии и платформы</h2>
+                            <div class="tools-grid">
+                                <div class="tool-item">Astra Linux</div>
+                                <div class="tool-item">PostgreSQL</div>
+                                <div class="tool-item">Tarantool</div>
+                                <div class="tool-item">ClickHouse</div>
+                                <div class="tool-item">Yandex Cloud</div>
+                                <div class="tool-item">OpenShift</div>
+                                <div class="tool-item">Nextcloud</div>
+                                <div class="tool-item">GitLab</div>
+                            </div>
+                        </section>
+
+                        <section class="service-section">
+                            <h2>Что получает бизнес</h2>
+                            <ul class="benefits-list">
+                                <li><strong>Независимость:</strong> Меньше риска из-за внешних ограничений</li>
+                                <li><strong>Контроль:</strong> Прозрачность по данным, платформам и процессам</li>
+                                <li><strong>Стабильность:</strong> Поддерживаемый стек и понятная стратегия развития</li>
+                                <li><strong>Экспертиза:</strong> Команда умеет работать с новой инфраструктурой сама</li>
+                            </ul>
+                        </section>
+                    </div>
+
+                    <aside class="content-col-sidebar">
+                        <div class="sidebar-box">
+                            <h3>Мы поможем</h3>
+                            <ul class="sidebar-list">
+                                <li>Проанализировать текущую зависимость от вендоров</li>
+                                <li>Выбрать безопасный путь миграции</li>
+                                <li>Подготовить инфраструктуру и команду</li>
+                                <li>Перенести сервисы с контролем рисков</li>
+                                <li>Зафиксировать новый operating model</li>
+                            </ul>
+                            <a href="index.html#contact" class="btn-discuss btn-block">Обсудить проект</a>
                         </div>
-                    </section>
 
-                    <section class="service-section">
-                        <h2>Преимущества импортозамещения</h2>
-                        <ul class="benefits-list">
-                            <li><strong>Независимость:</strong> Избавьтесь от зависимости от иностранных вендоров</li>
-                            <li><strong>Безопасность:</strong> Полный контроль над данными и инфраструктурой</li>
-                            <li><strong>Навыки:</strong> Развитие компетенций команды на российских технологиях</li>
-                            <li><strong>Поддержка:</strong> Возможность работать с российскими специалистами и компаниями</li>
-                            <li><strong>Стабильность:</strong> Гарантия продолжения поддержки и развития решений</li>
-                        </ul>
-                    </section>
-                </div>
-
-                <div class="content-col-sidebar">
-                    <div class="sidebar-box">
-                        <h3>Мы поможем:</h3>
-                        <ul class="sidebar-list">
-                            <li>✓ Проанализировать текущую инфраструктуру</li>
-                            <li>✓ Выбрать лучшие альтернативы</li>
-                            <li>✓ Спланировать миграцию</li>
-                            <li>✓ Выполнить миграцию без простоев</li>
-                            <li>✓ Обучить команду новым решениям</li>
-                        </ul>
-                        <a href="#" class="btn-discuss btn-block">Обсудить проект</a>
-                    </div>
-
-                    <div class="sidebar-box">
-                        <h3>Контакты</h3>
-                        <p><strong>Телефон:</strong><br>+7 (499) 704 70 70</p>
-                        <p><strong>Email:</strong><br><a href="mailto:hello@RootLab.ru">hello@RootLab.ru</a></p>
-                        <p><strong>Город:</strong><br>Екатеринбург</p>
-                    </div>
+                        <div class="sidebar-box">
+                            <h3>Контакты</h3>
+                            <p><strong>Телефон:</strong><br><a href="tel:+74997047070">+7 (499) 704 70 70</a></p>
+                            <p><strong>Email:</strong><br><a href="mailto:hello@root-lab.ru">hello@root-lab.ru</a></p>
+                            <p><strong>Город:</strong><br>Екатеринбург</p>
+                        </div>
+                    </aside>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
             <div class="footer-row">
                 <div class="footer-col">
-                    <div class="logo" style="margin-bottom: 15px;">RootLab</div>
+                    <a href="index.html" class="logo footer-logo" aria-label="RootLab — главная">RootLab</a>
                     <p>© 2011-2026. Все права защищены.</p>
                 </div>
-                <div class="footer-col">
-                    <h4>Услуги</h4>
-                    <ul>
-                        <li><a href="service-1.html">DevOps & CI/CD</a></li>
-                        <li><a href="service-2.html">DevSecOps</a></li>
-                        <li><a href="service-3.html">MLOps</a></li>
-                    </ul>
-                </div>
+                 <div class="footer-col">
+                     <h4>Услуги</h4>
+                     <ul>
+                         <li><a href="service-1.html">DevOps &amp; CI/CD</a></li>
+                         <li><a href="service-2.html">DevSecOps</a></li>
+                         <li><a href="service-3.html">MLOps</a></li>
+                         <li><a href="service-4.html">Импортозамещение</a></li>
+                         <li><a href="service-5.html">Поддержка 24/7</a></li>
+                         <li><a href="service-6.html">Kubernetes</a></li>
+                     </ul>
+                 </div>
                 <div class="footer-col">
                     <h4>Контакты</h4>
                     <ul>
-                        <li>+7 (499) 704 70 70</li>
-                        <li>hello@RootLab.ru</li>
+                        <li><a href="tel:+74997047070">+7 (499) 704 70 70</a></li>
+                        <li><a href="mailto:hello@root-lab.ru">hello@root-lab.ru</a></li>
                         <li>г. Екатеринбург</li>
                     </ul>
                 </div>

@@ -1,52 +1,61 @@
-// RootLab - JavaScript
-// Основной файл скриптов
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Инициализация компонентов
-    initNavigation();
     initBurgerMenu();
+    initAnchorLinks();
 });
 
-function initNavigation() {
-    // Обработчик клика на кнопку "Обсудить проект"
-    const discussBtn = document.querySelector('.btn-discuss');
-    if (discussBtn) {
-        discussBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            // Здесь может быть логика модального окна или редиректа
-            console.log('Клик на Обсудить проект');
+function initAnchorLinks() {
+    const internalAnchors = document.querySelectorAll('a[href^="#"]');
+
+    internalAnchors.forEach(function(link) {
+        link.addEventListener('click', function() {
+            const targetId = link.getAttribute('href');
+
+            if (!targetId || targetId === '#') {
+                return;
+            }
+
+            const target = document.querySelector(targetId);
+            if (target) {
+                target.setAttribute('tabindex', '-1');
+            }
         });
-    }
+    });
 }
 
 function initBurgerMenu() {
     const burgerBtn = document.getElementById('burgerBtn');
     const mobileMenu = document.getElementById('mobileMenu');
-    
+
     if (!burgerBtn || !mobileMenu) return;
-    
-    // Открытие/закрытие меню при клике на бургер
+
+    function setMenuState(isOpen) {
+        burgerBtn.classList.toggle('active', isOpen);
+        mobileMenu.classList.toggle('active', isOpen);
+        burgerBtn.setAttribute('aria-expanded', String(isOpen));
+        burgerBtn.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
+    }
+
     burgerBtn.addEventListener('click', function() {
-        burgerBtn.classList.toggle('active');
-        mobileMenu.classList.toggle('active');
+        const isOpen = !burgerBtn.classList.contains('active');
+        setMenuState(isOpen);
     });
-    
-    // Закрытие меню при клике на ссылку
-    const menuLinks = mobileMenu.querySelectorAll('a');
-    menuLinks.forEach(link => {
+
+    mobileMenu.querySelectorAll('a').forEach(function(link) {
         link.addEventListener('click', function() {
-            burgerBtn.classList.remove('active');
-            mobileMenu.classList.remove('active');
+            setMenuState(false);
         });
     });
-    
-    // Закрытие меню при клике вне его
+
     document.addEventListener('click', function(event) {
-        if (!event.target.closest('header')) {
-            if (burgerBtn.classList.contains('active')) {
-                burgerBtn.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            }
+        if (!event.target.closest('header') && burgerBtn.classList.contains('active')) {
+            setMenuState(false);
+        }
+    });
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && burgerBtn.classList.contains('active')) {
+            setMenuState(false);
+            burgerBtn.focus();
         }
     });
 }

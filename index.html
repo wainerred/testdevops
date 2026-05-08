@@ -3,198 +3,282 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RootLab - DevOps, DevSecOps, MLOps, Техподдержка IT-проектов 24/7</title>
+    <title>RootLab - DevOps, DevSecOps, MLOps и поддержка инфраструктуры 24/7</title>
+    <meta name="description" content="RootLab помогает highload-проектам с DevOps, DevSecOps, MLOps, Kubernetes, импортозамещением и круглосуточной поддержкой инфраструктуры.">
+    <meta name="theme-color" content="#1b1d20">
+    <meta property="og:title" content="RootLab - DevOps и техподдержка 24/7">
+    <meta property="og:description" content="Инженерная команда для DevOps, DevSecOps, MLOps, Kubernetes и поддержки инфраструктуры highload-проектов.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="logo.png">
+    <link rel="canonical" href="https://root-lab.ru/">
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <a class="skip-link" href="#mainContent">Перейти к содержимому</a>
 
     <header>
         <div class="container header-inner">
-            <div class="logo">RootLab</div>
-            
-            <nav class="nav-menu">
-                <a href="#">Услуги</a>
-                <a href="#">Принципы</a>
-                <a href="#">Клиенты</a>
-                <a href="#">Обучение</a>
+            <a href="index.html" class="logo" aria-label="RootLab — главная">
+                RootLab
+            </a>
+
+            <nav class="nav-menu" aria-label="Основная навигация">
+                <a href="#services">Услуги</a>
+                <a href="#principles">Принципы</a>
+                <a href="#clients">Клиенты</a>
+                <a href="#training">Обучение</a>
+                <a href="#contact">Контакты</a>
             </nav>
 
             <div class="header-right">
                 <div class="contacts">
-                    <span class="phone">+7 (499) 704 70 70</span>
-                    <a href="mailto:hello@RootLab.ru" class="email">hello@RootLab.ru</a>
+                    <a href="tel:+74997047070" class="phone">+7 (499) 704 70 70</a>
+                    <a href="mailto:hello@root-lab.ru" class="email">hello@root-lab.ru</a>
                 </div>
-                <a href="#" class="btn-discuss">Обсудить проект</a>
+                <a href="#contact" class="btn-discuss">Обсудить проект</a>
             </div>
 
-            <button class="burger-menu" id="burgerBtn">
+            <button
+                class="burger-menu"
+                id="burgerBtn"
+                type="button"
+                aria-expanded="false"
+                aria-controls="mobileMenu"
+                aria-label="Открыть меню"
+            >
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
         </div>
 
-        <nav class="mobile-menu" id="mobileMenu">
-            <a href="index.html">Главная</a>
-            <a href="#">Услуги</a>
-            <a href="#">Принципы</a>
-            <a href="#">Клиенты</a>
-            <a href="#">Обучение</a>
-            <a href="mailto:hello@RootLab.ru">hello@RootLab.ru</a>
+        <nav class="mobile-menu" id="mobileMenu" aria-label="Мобильная навигация">
+            <a href="#services">Услуги</a>
+            <a href="#principles">Принципы</a>
+            <a href="#clients">Клиенты</a>
+            <a href="#training">Обучение</a>
+            <a href="#contact">Контакты</a>
+            <a href="mailto:hello@root-lab.ru">hello@root-lab.ru</a>
             <a href="tel:+74997047070">+7 (499) 704 70 70</a>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>DevOps, DevSecOps, MLOps и техподдержка серверов 24/7 <span>для highload-проектов</span></h1>
-        </div>
-    </section>
-
-    <section class="services">
-        <div class="container grid">
-            
-            <div class="card">
-                <span class="card-num">01</span>
-                <div class="card-title"><span>>_</span> DevOps & CI/CD</div>
-                <div class="card-desc">
-                    Помогаем компаниям внедрять передовые DevOps-практики и автоматизацию процессов CI/CD для ускорения разработки и повышения отказоустойчивости сервисов в production.
-                </div>
-                <div class="card-footer">
-                   <!-- <div class="price">
-                        <span>Стоимость:</span>
-                        от 240 000 ₽
-                    </div>-->
-                    <a href="./service-1.html" class="more-link">Подробнее</a>
+    <main id="mainContent">
+        <section class="hero">
+            <div class="container">
+                <p class="eyebrow">RootLab</p>
+                <h1>DevOps, DevSecOps, MLOps и техподдержка серверов 24/7 <span>для highload-проектов</span></h1>
+                <p class="hero-text">Берём на себя инфраструктуру, релизы, безопасность и поддержку production-среды, чтобы ваша команда быстрее выпускала продукт и спокойнее проходила инциденты.</p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn-discuss">Обсудить проект</a>
+                    <a href="#services" class="btn-secondary">Посмотреть услуги</a>
                 </div>
             </div>
+        </section>
 
-            <div class="card">
-                <span class="card-num">02</span>
-                <div class="card-title"><span>>_</span> DevSecOps</div>
-                <div class="card-desc">
-                    Безопасность стоит дорого. Нет, нет, не само ее внедрение, а убытки от нее. Вы уже подумали об этом? Внедрим защиту на всех этапах пайплайна.
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-label">Услуги</p>
+                    <h2>Подключаемся там, где инфраструктура должна работать без компромиссов</h2>
                 </div>
-                <div class="card-footer">
-                    <!--<div class="price">
-                        <span>Стоимость:</span>
-                        от 540 000 ₽
-                    </div>-->
-                    <a href="./service-2.html" class="more-link">Подробнее</a>
+
+                <div class="grid">
+                    <article class="card">
+                        <span class="card-num">01</span>
+                        <div class="card-title"><span>>_</span> DevOps &amp; CI/CD</div>
+                        <div class="card-desc">
+                            Помогаем компаниям внедрять передовые DevOps-практики и автоматизацию процессов CI/CD для ускорения разработки и повышения отказоустойчивости сервисов в production.
+                        </div>
+                        <div class="card-footer">
+                            <a href="service-1.html" class="more-link">Подробнее</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <span class="card-num">02</span>
+                        <div class="card-title"><span>>_</span> DevSecOps</div>
+                        <div class="card-desc">
+                            Встраиваем безопасность в жизненный цикл разработки: от анализа кода и зависимостей до контроля секретов и мониторинга инцидентов.
+                        </div>
+                        <div class="card-footer">
+                            <a href="service-2.html" class="more-link">Подробнее</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <span class="card-num">03</span>
+                        <div class="card-title"><span>>_</span> MLOps</div>
+                        <div class="card-desc">
+                            Строим процессы для команд машинного обучения: обучение, валидация, деплой, мониторинг моделей и управление ML-пайплайнами.
+                        </div>
+                        <div class="card-footer">
+                            <a href="service-3.html" class="more-link">Подробнее</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <span class="card-num">04</span>
+                        <div class="card-title"><span>>_</span> Импортозамещение</div>
+                        <div class="card-desc">
+                            Помогаем уйти от критической зависимости от иностранных вендоров и перевести инфраструктуру на устойчивые альтернативы.
+                        </div>
+                        <div class="card-footer">
+                            <a href="service-4.html" class="more-link">Подробнее</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <span class="card-num">05</span>
+                        <div class="card-title"><span>>_</span> Поддержка 24/7</div>
+                        <div class="card-desc">
+                            Круглосуточно поддерживаем production-инфраструктуру, быстро реагируем на инциденты и держим критичные сервисы в онлайне.
+                        </div>
+                        <div class="card-footer">
+                            <a href="service-5.html" class="more-link">Подробнее</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <span class="card-num">06</span>
+                        <div class="card-title"><span>>_</span> Kubernetes</div>
+                        <div class="card-desc">
+                            Проектируем и внедряем отказоустойчивые инфраструктуры на базе Kubernetes, обеспечивая масштабируемость и высокую доступность сервисов.
+                        </div>
+                        <div class="card-footer">
+                            <a href="service-6.html" class="more-link">Подробнее</a>
+                        </div>
+                    </article>
                 </div>
             </div>
+        </section>
 
-            <div class="card">
-                <span class="card-num">03</span>
-                <div class="card-title"><span>>_</span> MLOps</div>
-                <div class="card-desc">
-                    Строим эффективные процессы, уже и для ML. Зайдем на проект, посмотрим и сделаем лучше! Обучение, деплой и мониторинг моделей.
+        <section class="principles" id="principles">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-label">Принципы работы</p>
+                    <h2>Настоящий 24/7: команда, которая не ждёт, пока проблема станет инцидентом</h2>
                 </div>
-                <div class="card-footer">
-                    <!--<div class="price">
-                        <span>Стоимость:</span>
-                        от 540 000 ₽
-                    </div>-->
-                    <a href="./service-3.html" class="more-link">Подробнее</a>
+                <div class="principles-grid">
+                    <div class="p-item">
+                        <h3>Проактивность</h3>
+                        <p>Находим и устраняем многие проблемы до их проявления. Если видим полезный тюнинг, предлагаем и внедряем.</p>
+                    </div>
+                    <div class="p-item">
+                        <h3>SLA с гарантией</h3>
+                        <p>Скорость реакции и время простоя фиксируем в договоре. Несём за них финансовую ответственность.</p>
+                    </div>
+                    <div class="p-item">
+                        <h3>Правило 15 минут</h3>
+                        <p>Если случается беда, у наших администраторов есть 15 минут, чтобы приступить к её решению.</p>
+                    </div>
+                    <div class="p-item">
+                        <h3>Дотошность</h3>
+                        <p>Задаём много вопросов и уточняем детали, чтобы проект получил лучшее решение с учётом всех тонкостей.</p>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="card">
-                <span class="card-num">04</span>
-                <div class="card-title"><span>>_</span> Импортозамещение</div>
-                <div class="card-desc">
-                    Обеспечим конкурентное преимущество вашего IT-продукта сейчас. Поможем быть на шаг впереди, когда иностранный вендор прекратит поддержку.
+        <section class="info-section" id="clients">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-label">Клиенты</p>
+                    <h2>Подходим командам, у которых инфраструктура напрямую влияет на деньги и репутацию</h2>
                 </div>
-                <div class="card-footer">
-                    <!--<div class="price">
-                        <span>Стоимость:</span>
-                        от 360 000 ₽
-                    </div>-->
-                    <a href="./service-4.html" class="more-link">Подробнее</a>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>E-commerce и SaaS</h3>
+                        <p>Системы с пиковыми нагрузками, частыми релизами и высокой ценой простоя.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Финтех и B2B-платформы</h3>
+                        <p>Проекты с требованиями к аудиту, безопасности, резервированию и стабильности.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>ML и data-команды</h3>
+                        <p>Организации, которым нужны воспроизводимые пайплайны, мониторинг моделей и предсказуемый production.</p>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="card">
-                <span class="card-num">05</span>
-                <div class="card-title"><span>>_</span> Поддержка 24/7</div>
-                <div class="card-desc">
-                    Круглосуточно поддерживаем более 1000 серверов. Хотите быть онлайн 24/7 и спать спокойно? Это к нам. Реакция на инциденты - 15 минут.
+        <section class="info-section info-section-alt" id="training">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-label">Обучение</p>
+                    <h2>Передаём экспертизу внутрь команды, а не превращаем проект в чёрный ящик</h2>
                 </div>
-                <div class="card-footer">
-                    <!--<div class="price">
-                        <span>Стоимость:</span>
-                        от 50 000 ₽
-                    </div>-->
-                    <a href="./service-5.html" class="more-link">Подробнее</a>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>Onboarding DevOps-практик</h3>
+                        <p>Помогаем выстроить процессы CI/CD, IaC и эксплуатации так, чтобы команда поддерживала их самостоятельно.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Разбор production-кейсов</h3>
+                        <p>Показываем, как действовать при инцидентах, анализировать узкие места и снижать риск повторных сбоев.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Документация и handover</h3>
+                        <p>Фиксируем архитектуру, регламенты и runbook'и, чтобы знания не терялись при росте команды.</p>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="card">
-                <span class="card-num">06</span>
-                <div class="card-title"><span>>_</span> Kubernetes</div>
-                <div class="card-desc">
-                    Проектируем и внедряем отказоустойчивые инфраструктуры на базе K8s. Обеспечиваем высокую доступность сервисов в production.
+        <section class="contact-section" id="contact">
+            <div class="container contact-layout">
+                <div class="contact-copy">
+                    <p class="section-label">Контакты</p>
+                    <h2>Можно прийти с текущим инцидентом, с идеей миграции или просто с перегруженной инфраструктурой</h2>
+                    <p>Расскажите, что у вас болит: долгое время релиза, нестабильный production, проблемы с безопасностью, сложный Kubernetes или нехватка дежурной поддержки. Сориентируем по формату работы и следующему шагу.</p>
                 </div>
-                <div class="card-footer">
-                    <!--<div class="price">
-                        <span>Стоимость:</span>
-                        от 320 000 ₽
-                    </div>-->
-                    <a href="./service-6.html" class="more-link">Подробнее</a>
+
+                <div class="contact-card">
+                    <h3>Связаться с нами</h3>
+                    <ul class="contact-list">
+                        <li><span>Телефон</span><a href="tel:+74997047070">+7 (499) 704 70 70</a></li>
+                        <li><span>Email</span><a href="mailto:hello@root-lab.ru">hello@root-lab.ru</a></li>
+                        <li><span>Город</span><strong>Екатеринбург</strong></li>
+                        <li><span>Режим</span><strong>Поддержка 24/7, проектная работа и аудит</strong></li>
+                    </ul>
+                    <div class="contact-actions">
+                        <a href="mailto:hello@root-lab.ru?subject=Обсуждение%20проекта%20с%20RootLab" class="btn-discuss">Написать на email</a>
+                        <a href="tel:+74997047070" class="btn-secondary">Позвонить</a>
+                    </div>
                 </div>
             </div>
-
-        </div>
-    </section>
-
-    <section class="principles">
-        <div class="container">
-            <div class="section-header">
-                <h2>Настоящий 24/7: эти ребята вообще когда-нибудь спят?</h2>
-            </div>
-            <div class="principles-grid">
-                <div class="p-item">
-                    <h3>Проактивность</h3>
-                    <p>Находим и устраняем многие проблемы до их проявления. Если видим полезный тюнинг, предлагаем и внедряем.</p>
-                </div>
-                <div class="p-item">
-                    <h3>SLA с гарантией</h3>
-                    <p>Скорость реакции и время простоя фиксируем в договоре. Несем за них финансовую ответственность.</p>
-                </div>
-                <div class="p-item">
-                    <h3>Правило 15 минут</h3>
-                    <p>Если случается беда, у наших администраторов есть 15 минут, чтобы приступить к её решению.</p>
-                </div>
-                <div class="p-item">
-                    <h3>Дотошность</h3>
-                    <p>Задаём много вопросов, уточняем детали. Ваш проект получает лучшее решение, учитывающее все тонкости.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
             <div class="footer-row">
                 <div class="footer-col">
-                    <div class="logo" style="margin-bottom: 15px;">RootLab</div>
+                    <a href="index.html" class="logo footer-logo" aria-label="RootLab — главная">RootLab</a>
                     <p>© 2011-2026. Все права защищены.</p>
                 </div>
-                <div class="footer-col">
-                    <h4>Услуги</h4>
-                    <ul>
-                        <li><a href="#">DevOps аутсорсинг</a></li>
-                        <li><a href="#">Kubernetes</a></li>
-                        <li><a href="#">CI/CD</a></li>
-                    </ul>
-                </div>
+                 <div class="footer-col">
+                     <h4>Услуги</h4>
+                     <ul>
+                         <li><a href="service-1.html">DevOps &amp; CI/CD</a></li>
+                         <li><a href="service-2.html">DevSecOps</a></li>
+                         <li><a href="service-3.html">MLOps</a></li>
+                         <li><a href="service-4.html">Импортозамещение</a></li>
+                         <li><a href="service-5.html">Поддержка 24/7</a></li>
+                         <li><a href="service-6.html">Kubernetes</a></li>
+                     </ul>
+                 </div>
                 <div class="footer-col">
                     <h4>Контакты</h4>
                     <ul>
-                        <li>+7 (499) 704 70 70</li>
-                        <li>hello@RootLab.ru</li>
-                        <li>г. ЕКБ</li>
+                        <li><a href="tel:+74997047070">+7 (499) 704 70 70</a></li>
+                        <li><a href="mailto:hello@root-lab.ru">hello@root-lab.ru</a></li>
+                        <li>г. Екатеринбург</li>
                     </ul>
                 </div>
             </div>
